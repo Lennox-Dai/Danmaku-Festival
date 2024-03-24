@@ -1,8 +1,8 @@
-# BOMBGUY!
+# Danmaku-Festival
 
 #### Team 13：GensokyoCraft
 
-> 感谢https://pixelfrog-assets.itch.io/tiny-swords的开源素材，离开他们的慷慨分享我们无法在如此短时间内做到2D的图形化展示！
+> 感谢https://pixelfrog-assets.itch.io/tiny-swords  的开源素材，离开他们的慷慨分享我们无法在如此短时间内做到2D的图形化展示！
 
 (这里放主标题UI图)
 
