@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class QBehav : MonoBehaviour
 {
-    static private HeroCrush h = null;
-    static public void getHero(HeroCrush g){
+    static private NormalController h = null;
+    static public void getController(NormalController g){
         h = g;
     } 
     void Start()

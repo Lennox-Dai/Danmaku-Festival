@@ -21,6 +21,8 @@ public class datas : MonoBehaviour
     public float scvy=0;
     public float scmvx=0;
     public float scmvy=0;
+    public float rax=0;
+    public float rbx=0;
     //deg是速度，rot是贴图
     void Start()
     {

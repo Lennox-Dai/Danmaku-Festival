@@ -32,7 +32,7 @@ public class BulletScript : MonoBehaviour
         // Debug.Log(TargetP);
         transform.position = h.transform.position;
         curPosition = transform.position;
-        damage = 0.1f;
+        damage = 5f;
         speed = 800f;
         starttime = Time.time;
         bias = 1000f;
@@ -55,8 +55,10 @@ public class BulletScript : MonoBehaviour
     //TODO 加上和谁碰撞
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Debug.Log("with:"+collision.gameObject.name);
-        Destroy(transform.gameObject);
+        if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
+        {
+            Destroy(transform.gameObject);
+        }
     }
 
     private bool HitWall(){

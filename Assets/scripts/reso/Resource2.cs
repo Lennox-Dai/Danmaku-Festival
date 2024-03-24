@@ -9,10 +9,11 @@ public class Resource2 : MonoBehaviour
     private float renewtime;
     public Sprite[] goldmind;
     public SpriteRenderer GoldRender;
-    static private HeroCrush h = null;
-    static public void getHero(HeroCrush g){
+
+    static private NormalController h = null;
+    static public void getController(NormalController g){
         h = g;
-    }
+    } 
     void Start()
     {
         GoldRender = GetComponent<SpriteRenderer>();

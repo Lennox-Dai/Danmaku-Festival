@@ -7,7 +7,7 @@ public class HeroAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject e = Instantiate(Resources.Load("prefabs/NormalController") as GameObject);
+
     }
 
     // Update is called once per frame

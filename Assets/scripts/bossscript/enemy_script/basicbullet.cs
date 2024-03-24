@@ -9,7 +9,7 @@ public partial class basicbullet : MonoBehaviour
     GameObject mcam;
     void Start()
     {
-        mcam=GameObject.Find("mCamera");
+        mcam=GameObject.Find("Main Camera");
     }
 
     // Update is called once per frame
@@ -21,6 +21,14 @@ public partial class basicbullet : MonoBehaviour
     }
     void scrcheck(){
         if (mcam!=null){
+            float cx=-240,cy=0,lx=735,ly=540;
+            float sx=transform.localPosition.x;
+            float sy=transform.localPosition.y;
+            if(sx<cx-lx||sx>cx+lx||sy>cy+ly||sy<cy-ly){
+                Destroy(gameObject);
+            }
+            return;
+            /*
             Camera cm=mcam.GetComponent<Camera>();
             
             float os = cm.orthographicSize;
@@ -30,9 +38,12 @@ public partial class basicbullet : MonoBehaviour
             float yy=cm.transform.localPosition.y;
             float sx=transform.localPosition.x;
             float sy=transform.localPosition.y;
+            Debug.Log(lx+" "+ly+" "+sx+" "+sy);
             if(sx<xx-lx||sx>xx+lx||sy<yy-ly||sy>yy+ly){
+                Debug.Log(sx+" "+sy);
+                Debug.Log((xx-lx)+" "+(yy-ly));
                 Destroy(gameObject);
-            }
+            }*/
         }
     }
     void OnTriggerEnter2D(Collider2D cld){
@@ -42,7 +53,9 @@ public partial class basicbullet : MonoBehaviour
         if(other!=null){
             //if(other.group==)
         }
-        
+        if(cld.gameObject.name=="Shield(Clone)"){
+            Destroy(gameObject);
+        }
     }
     
     public void chplace(float x,float y){
@@ -87,5 +100,10 @@ public partial class basicbullet : MonoBehaviour
         self.scvy=y;
         self.scmvx=z;
         self.scmvy=w;
+    }
+    public void chcolli(float x,float y){
+        datas self=GetComponent<datas>();
+        self.a=x;
+        self.b=y;
     }
 }

@@ -41,7 +41,10 @@ public class NormalBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Debug.Log("with:"+collision.gameObject.name);
-        Destroy(transform.gameObject);
+        if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
+        {
+            Destroy(transform.gameObject);
+        }
     }
 
     private bool HitWall(){

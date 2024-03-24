@@ -14,9 +14,10 @@ public class ShieldScript : MonoBehaviour
         h = g;
     } 
     private bool blinking;
+    public float lasting; 
     void Start()
     {
-        DeadTime = Time.time + 5f;
+        DeadTime = Time.time + lasting;
         transform.position = h.transform.position;
         increase = false;
         blinking = false;

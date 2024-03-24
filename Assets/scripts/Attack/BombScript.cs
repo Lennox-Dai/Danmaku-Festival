@@ -8,6 +8,7 @@ public class BombScript : MonoBehaviour
     bool isDestroying = false;
     private float ImgTime;
     private int Imgcnt;
+    private int Imgcnt1;
     public float damage;    
     public Sprite[] FlyBomb;
     public Sprite[] LandBomb;
@@ -38,7 +39,7 @@ public class BombScript : MonoBehaviour
         updateimg();
         if ((Vector3.Distance(curPosition, TargetP) > 100) && (Time.time - lerptime > 0.01f)){
             // transform.position = Vector3.SmoothDamp(transform.position, TargetP, ref velocity, Time.smoothDeltaTime);
-            curPosition = Vector3.Lerp(curPosition, TargetP, rate) + new Vector3(Random.Range(-5f, 5), Random.Range(-5f, 5), 0);
+            curPosition = Vector3.Lerp(curPosition, TargetP, rate) + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
             lerptime = Time.time;
             transform.position = curPosition;
         }
@@ -51,14 +52,16 @@ public class BombScript : MonoBehaviour
     //TODO 加上和谁碰撞
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Debug.Log("with:"+collision.gameObject.name);
-        MyDestory();
+        if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
+        {
+            MyDestory();
+        }
     }
 
     private void updateimg(){
         if (Time.time - ImgTime > 0.8){
-            Imgcnt = (Imgcnt + 1) % FlyBomb.Length;
-            BombRender.sprite = FlyBomb[Imgcnt];
+            Imgcnt1 = (Imgcnt1 + 1) % FlyBomb.Length;
+            BombRender.sprite = FlyBomb[Imgcnt1];
             ImgTime = Time.time;
         }
     }

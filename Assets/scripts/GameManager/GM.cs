@@ -7,23 +7,26 @@ public class GM : MonoBehaviour
     public static GM GameManage = null;
     public HeroMove h = null;
     public HeroCrush c = null;
+    public NormalController n = null;
 
     void Start()
     {
         GM.GameManage = this;
         Debug.Assert(h != null);
         Flame.getHero(h);
-        Resource1.getHero(c); 
-        Resource2.getHero(c); 
-        Resource3.getHero(c); 
-        goldobj.getHero(c);
+        Resource1.getController(n); 
+        Resource2.getController(n); 
+        Resource3.getController(n); 
+        goldobj.getController(n);
         BombScript.getHero(c);
         BulletScript.getHero(c);
         ShieldScript.getHero(c);
         HeartScript.getHero(c);
         NormalBullet.getHero(c);
-        QBehav.getHero(c);
-        Blink.getHero(c);
+        NormalController.getHero(c);
+        NormalController.getmove(h);
+        QBehav.getController(n);
+        Blink.getController(n);
     }
 
     // Update is called once per frame

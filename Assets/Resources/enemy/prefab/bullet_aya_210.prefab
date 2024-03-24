@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2244489706937362417}
-  - component: {fileID: 1004927624142104011}
-  - component: {fileID: 2469475581678733155}
   - component: {fileID: 4024672860163518569}
   - component: {fileID: 1137630064194465601}
   - component: {fileID: 8480771248347645603}
   - component: {fileID: -6680557766423606570}
+  - component: {fileID: 4500137325928745634}
+  - component: {fileID: 129280938612159248}
   m_Layer: 0
   m_Name: bullet_aya_210
   m_TagString: Untagged
@@ -37,40 +37,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1004927624142104011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50996920802128181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81ed065370909de419c69a67fe2756f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2469475581678733155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50996920802128181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef2b3c33b4d361a4196bfe8a96ad7d10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  group: 0
-  v: 0
-  rotv: 0
-  degv: 0
-  deg: 0
-  rot: 0
-  hp: 10
-  a: 4
-  b: 4
-  phase: 0
 --- !u!212 &4024672860163518569
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -88,6 +54,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -131,6 +99,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50996920802128181}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -154,7 +123,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,7 +135,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
 --- !u!50 &8480771248347645603
@@ -205,5 +174,46 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a97718b52f5c034aa1531c40bac6387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4500137325928745634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50996920802128181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74c6ecea3baec14b97913065e9e4498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: 0
+  v: 0
+  rotv: 0
+  degv: 0
+  deg: 0
+  rot: 0
+  hp: 10
+  a: 4
+  b: 4
+  dra: 0
+  phase: 0
+  scvx: 0
+  scvy: 0
+  scmvx: 0
+  scmvy: 0
+  rax: 0
+  rbx: 0
+--- !u!114 &129280938612159248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50996920802128181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8687c78d213c39d4296e66cee99cd2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

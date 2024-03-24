@@ -6,8 +6,8 @@ public class Blink : MonoBehaviour
 {
     private bool increase;
     private float increase_speed;
-    static private HeroCrush h = null;
-    static public void getHero(HeroCrush g){
+    static private NormalController h = null;
+    static public void getController(NormalController g){
         h = g;
     } 
     void Start()

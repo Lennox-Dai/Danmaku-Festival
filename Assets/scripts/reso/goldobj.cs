@@ -10,8 +10,8 @@ public class goldobj : MonoBehaviour
     private int Check4Once;
     public bool fix;
     private int on;
-    static private HeroCrush h = null;
-    static public void getHero(HeroCrush g){
+    static private NormalController h = null;
+    static public void getController(NormalController g){
         h = g;
     } 
     // Start is called before the first frame update

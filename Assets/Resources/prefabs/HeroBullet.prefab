@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6289892054136982824}
   - component: {fileID: 735480954782784003}
   - component: {fileID: -5070499587563348353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeroBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8819c105477c44a9be37bc6a3018a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dir: 0
   damage: 0
   BombRender: {fileID: 0}
   TargetP: {x: 0, y: 0, z: 0}

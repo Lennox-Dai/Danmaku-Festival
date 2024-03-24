@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7330453667073813213}
   - component: {fileID: 4466102770500129600}
   - component: {fileID: 1372704449944740306}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Resource1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebfd020dd3e52e43b175920c9e78065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mindactivate: 0
   goldmind:
   - {fileID: 7427445707187218192, guid: 2b327e65083179342819425c54fcca93, type: 3}
   - {fileID: 2892278186164259366, guid: df03cf2f39b79cd459e47743e9ab9b8d, type: 3}

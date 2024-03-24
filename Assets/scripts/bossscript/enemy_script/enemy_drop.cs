@@ -2,31 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class enemy_snipe : MonoBehaviour
+public class enemy_drop : MonoBehaviour
 {
     // Start is called before the first frame update
     float frame=0.0166f;
     int framed=0;
     float lastti=0;
     int timer=0;
-    float cx=-240,cy=0,lx=735,ly=540;
-    GameObject h=null;
+    //float cx=-240,cy=0,lx=735,ly=540;
+    public float fx=0;
+    //GameObject h=null;
     GameObject bullet1=null;
     Sprite ball_huan;
     Sprite arrow;
-    int shoot=0;
-    int shoot2=0;
     void Start()
     {
         bullet1=Resources.Load("enemy/prefab/bulletclass") as GameObject;
         ball_huan=Resources.Load<Sprite>("enemy/ball_mid_2") as Sprite;
-        arrow=Resources.Load<Sprite>("enemy/arrow_2") as Sprite;
+        arrow=Resources.Load<Sprite>("enemy/grain1") as Sprite;
         datas self=GetComponent<datas>();
-        self.hp=2000f;
+        self.hp=600f;
         basicbullet bsb=GetComponent<basicbullet>();
-        bsb.chplace(cx-lx+1,cy+ly/2);
-        bsb.chv(3);
-        h=GameObject.Find("Hero");
+        bsb.chv(2);
+        bsb.chcolli(16,16);
     }
     float gdeg(GameObject x,GameObject y){
         float x1=x.transform.localPosition.x,y1=x.transform.localPosition.y;
@@ -38,9 +36,13 @@ public class enemy_snipe : MonoBehaviour
         return (float)Math.Atan((y2-y1)/(x2-x1))*180/3.14f+ch;
     }
     // Update is called once per frame
-    int ty=0;
+    int fst=0;
     void Update()
     {
+        if(fst==0){
+            fst=1;
+            
+        }
         if(Time.time-lastti>frame){
             timer++;
             framed=1;
@@ -54,53 +56,19 @@ public class enemy_snipe : MonoBehaviour
             if(self.hp<=0){
                 Destroy(gameObject);
             }
-            if(timer%120==0){
-                shoot=4;
-            }
-            if(shoot>0&&timer%8==0){
-                shoot--;
+            if(timer%8==0){
                 for(int i=1;i<=12;i++){
                     GameObject bul=Instantiate(bullet1);
                     basicbullet basb=bul.GetComponent<basicbullet>();
                     basb.chplace(transform.localPosition.x,transform.localPosition.y);
-                    float sdeg=gdeg(gameObject,h);
+                    float sdeg=-90;
                     basb.chdeg(sdeg);
                     basb.chrot(sdeg);
-                    basb.chv(3+i*0.3f);
+                    basb.chv(3*self.rbx);
                     basb.chimg(arrow);
-                    if(ball_huan==null){
-                        Debug.Log("kkksw");
-                    }
-                }
-            }
-            if(timer%240==0&&ty==0){
-                basicbullet bsb=GetComponent<basicbullet>();
-                bsb.chv(0);
-                shoot2=4;
-                ty=1;
-            }
-            if(timer%600==0&&ty==1){
-                basicbullet bsb=GetComponent<basicbullet>();
-                bsb.chv(3);
-            }
-            if(shoot2>0&&timer%60==0){
-                shoot2--;
-                float sdeg=gdeg(gameObject,h);
-                int way=16;
-                for(int i=1;i<=way;i++){
-                    GameObject bul=Instantiate(bullet1);
-                    basicbullet basb=bul.GetComponent<basicbullet>();
-                    basb.chplace(transform.localPosition.x,transform.localPosition.y);
-                    
-                    basb.chdeg(sdeg+i*360/way);
-                    basb.chrot(sdeg+i*360/way);
-                    basb.chv(5);
-                    basb.chimg(ball_huan);
                 }
             }
         }
-        
-
     }
     void OnTriggerEnter2D(Collider2D cld){
         
@@ -121,6 +89,7 @@ public class enemy_snipe : MonoBehaviour
         if(cld.gameObject.name=="HeroBullet(Clone)"){
             BulletScript bscr=cld.gameObject.GetComponent<BulletScript>();
             self.hp-=bscr.damage;
+            Debug.Log("kksk");
         }
     }
 }
