@@ -44,7 +44,7 @@ public class HeroMove : MonoBehaviour
         StaticCnt = 0;
         EnterCnt = 0;
         HeroRender = GetComponent<SpriteRenderer>();
-        transform.position = new Vector3 (-242, -272, 0);
+        transform.position = new Vector3 (-226, -408, 0);
         statusRight = true;
         StartCoroutine(EnterCoroutine()); //为了让开门动作先执行
     }

@@ -8,6 +8,9 @@ public class GM : MonoBehaviour
     public HeroMove h = null;
     public HeroCrush c = null;
     public NormalController n = null;
+    public datas d = null;
+    public SHAKE s = null;
+
 
     void Start()
     {
@@ -27,6 +30,10 @@ public class GM : MonoBehaviour
         NormalController.getmove(h);
         QBehav.getController(n);
         Blink.getController(n);
+        healthbar.getbossdata(d);
+        SHAKE.getbossdata(d);
+        healthbar.getSHAKE(s);
+        BackbarScript.getSHAKE(s);
     }
 
     // Update is called once per frame
