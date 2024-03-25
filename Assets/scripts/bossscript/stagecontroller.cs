@@ -99,6 +99,8 @@ public class stagecontroller : MonoBehaviour
             }
             if(timer==2400){
                 GameObject e1=Instantiate(boss1);
+                GameObject Backbar = Instantiate(Resources.Load("prefabs/backbar") as GameObject);
+                GameObject Frontbar = Instantiate(Resources.Load("prefabs/frontbar") as GameObject);
             }
         }
     }
