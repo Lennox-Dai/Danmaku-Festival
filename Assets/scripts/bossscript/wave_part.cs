@@ -12,15 +12,18 @@ public class wave_part : MonoBehaviour
     int timer=0;
     int framed=1;
     GameObject bullet1=null;
+    bool moving=false;
+    float cx=-240,cy=0,lx=735,ly=540;
     void Start()
     {
         
-        transform.localPosition=new Vector3(0,100,0);
+        transform.localPosition=new Vector3(cx,cy+ly/2,0);
         bullet1=Resources.Load("enemy/prefab/bulletclass") as GameObject;
         Sprite grain=Resources.Load<Sprite>("enemy/grain1") as Sprite;
         bullet1.GetComponent<basicbullet>().chimg(grain);
     }
-
+    float t1=480;
+    float t2=960;
     // Update is called once per frame
     void Update()
     {
@@ -31,21 +34,28 @@ public class wave_part : MonoBehaviour
         }
         else{
             framed=0;
+            return;
         }
-        if(framed==1){
+        if(timer<t1){
             degv+=0.05f;
             deg+=degv;
-            
-        }
-        if(timer%2==0&&framed==1){
-            for (int i=0;i<=8;i++){
-                GameObject bul=Instantiate(bullet1);
-                basicbullet basb=bul.GetComponent<basicbullet>();
-                basb.chplace(transform.localPosition.x,transform.localPosition.y);
-                basb.chrot(deg+i*360/8);
-                basb.chdeg(deg+i*360/8);
-                basb.chv(5f);
+            if(timer%2==0&&moving==false){
+                for (int i=0;i<=8;i++){
+                    GameObject bul=Instantiate(bullet1);
+                    basicbullet basb=bul.GetComponent<basicbullet>();
+                    basb.chplace(transform.localPosition.x,transform.localPosition.y);
+                    basb.chrot(deg+i*360/8);
+                    basb.chdeg(deg+i*360/8);
+                    basb.chv(3f);
+                    basb.chscale(2,2);
+                }
             }
+        }
+        else if(timer>=t1&&timer<t2){
+
+        }
+        else{
+            timer=0;
         }
     }
 }

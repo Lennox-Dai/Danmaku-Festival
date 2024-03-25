@@ -22,6 +22,7 @@ public class enemy_drop : MonoBehaviour
         arrow=Resources.Load<Sprite>("enemy/grain1") as Sprite;
         datas self=GetComponent<datas>();
         self.hp=600f;
+        self.group=2;
         basicbullet bsb=GetComponent<basicbullet>();
         bsb.chv(2);
         bsb.chcolli(16,16);
@@ -56,7 +57,7 @@ public class enemy_drop : MonoBehaviour
             if(self.hp<=0){
                 Destroy(gameObject);
             }
-            if(timer%8==0){
+            if(timer%24==0){
                 for(int i=1;i<=12;i++){
                     GameObject bul=Instantiate(bullet1);
                     basicbullet basb=bul.GetComponent<basicbullet>();
@@ -66,6 +67,7 @@ public class enemy_drop : MonoBehaviour
                     basb.chrot(sdeg);
                     basb.chv(3*self.rbx);
                     basb.chimg(arrow);
+                    basb.chscale(2,2);
                 }
             }
         }
@@ -89,7 +91,10 @@ public class enemy_drop : MonoBehaviour
         if(cld.gameObject.name=="HeroBullet(Clone)"){
             BulletScript bscr=cld.gameObject.GetComponent<BulletScript>();
             self.hp-=bscr.damage;
-            Debug.Log("kksk");
+        }
+        if(cld.gameObject.name=="NormalBullet(Clone)"){
+            NormalBullet bscr=cld.gameObject.GetComponent<NormalBullet>();
+            self.hp-=bscr.damage;
         }
     }
 }

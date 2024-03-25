@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SHAKE : MonoBehaviour
 {
-    static private datas h = null;
-    static public void getbossdata(datas g){
-        h = g;
-    } 
+    // static private datas h = null;
+    // static public void getbossdata(datas g){
+    //     h = g;
+    // } 
     private ShakePosition mShake = new ShakePosition(5, 0.5f);
 
     void Start()

@@ -6,10 +6,11 @@ using System;
 public partial class basicbullet : MonoBehaviour
 {
     // Start is called before the first frame update
-    GameObject mcam;
+    public bool bound=true;
+    public bool rbound=false;
     void Start()
     {
-        mcam=GameObject.Find("Main Camera");
+        
     }
 
     // Update is called once per frame
@@ -20,12 +21,21 @@ public partial class basicbullet : MonoBehaviour
         //长1470，宽1080
     }
     void scrcheck(){
-        if (mcam!=null){
+
+        if (bound){
             float cx=-240,cy=0,lx=735,ly=540;
             float sx=transform.localPosition.x;
             float sy=transform.localPosition.y;
             if(sx<cx-lx||sx>cx+lx||sy>cy+ly||sy<cy-ly){
-                Destroy(gameObject);
+                if(bound){
+                    Destroy(gameObject);
+                }
+                if(rbound){
+                    sx=Math.Min(cx+lx,sx);
+                    sx=Math.Max(cx-lx,sx);
+                    sy=Math.Min(cy+ly,sy);
+                    sy=Math.Max(cy-ly,sy);
+                }
             }
             return;
             /*
@@ -53,8 +63,10 @@ public partial class basicbullet : MonoBehaviour
         if(other!=null){
             //if(other.group==)
         }
-        if(cld.gameObject.name=="Shield(Clone)"){
-            Destroy(gameObject);
+        if(cld.gameObject.name=="Shield(Clone)"||cld.gameObject.name=="Hero"){
+            if(self.group==0){
+                Destroy(gameObject);
+            }
         }
     }
     

@@ -68,6 +68,7 @@ public class enemy_snipe : MonoBehaviour
                     basb.chrot(sdeg);
                     basb.chv(3+i*0.3f);
                     basb.chimg(arrow);
+                    basb.chscale(2,2);
                     if(ball_huan==null){
                         Debug.Log("kkksw");
                     }
@@ -96,6 +97,7 @@ public class enemy_snipe : MonoBehaviour
                     basb.chrot(sdeg+i*360/way);
                     basb.chv(5);
                     basb.chimg(ball_huan);
+                    basb.chscale(2,2);
                 }
             }
         }
@@ -120,6 +122,10 @@ public class enemy_snipe : MonoBehaviour
         }
         if(cld.gameObject.name=="HeroBullet(Clone)"){
             BulletScript bscr=cld.gameObject.GetComponent<BulletScript>();
+            self.hp-=bscr.damage;
+        }
+        if(cld.gameObject.name=="NormalBullet(Clone)"){
+            NormalBullet bscr=cld.gameObject.GetComponent<NormalBullet>();
             self.hp-=bscr.damage;
         }
     }

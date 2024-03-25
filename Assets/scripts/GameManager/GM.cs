@@ -31,7 +31,7 @@ public class GM : MonoBehaviour
         QBehav.getController(n);
         Blink.getController(n);
         healthbar.getbossdata(d);
-        SHAKE.getbossdata(d);
+        // SHAKE.getbossdata(d);
         healthbar.getSHAKE(s);
         BackbarScript.getSHAKE(s);
     }

@@ -68,10 +68,12 @@
     <Compile Include="Assets\scripts\bossscript\enemy_script\picture.cs" />
     <Compile Include="Assets\scripts\GameManager\GM.cs" />
     <Compile Include="Assets\scripts\Door\DoorOpen.cs" />
+    <Compile Include="Assets\scripts\bossscript\phase_rest.cs" />
     <Compile Include="Assets\scripts\hint\QBehav.cs" />
     <Compile Include="Assets\scripts\reso\goldobj.cs" />
     <Compile Include="Assets\scripts\hero\HeroCrush.cs" />
     <Compile Include="Assets\scripts\mouse\Mouse.cs" />
+    <Compile Include="Assets\scripts\bossscript\phase_shift.cs" />
     <Compile Include="Assets\scripts\bossscript\master_spark.cs" />
     <Compile Include="Assets\scripts\bossscript\wave_part.cs" />
     <Compile Include="Assets\scripts\Panel\MainMenuPanel.cs" />

@@ -19,9 +19,13 @@ public class enemy_melee : MonoBehaviour
         bullet1=Resources.Load("enemy/prefab/bullet_melee") as GameObject;
         ball_huan=Resources.Load<Sprite>("enemy/ball_mid_1") as Sprite;
         datas self=GetComponent<datas>();
-        self.hp=1000f;
+        self.hp=400f;
+        self.rax=50;
         self.rbx=0;
+        self.group=2;
         h=GameObject.Find("Hero");
+        basicbullet basb=GetComponent<basicbullet>();
+        basb.chcolli(16,16);
     }
     float gdeg(GameObject x,GameObject y){
         float x1=x.transform.localPosition.x,y1=x.transform.localPosition.y;
@@ -50,20 +54,21 @@ public class enemy_melee : MonoBehaviour
                 Destroy(gameObject);
             }
             if(timer==1){
-                for(int i=1;i<=6;i++){
+                float ti=12f;
+                for(int i=1;i<=ti;i++){
                     GameObject bul=Instantiate(bullet1);
                     basicbullet basb=bul.GetComponent<basicbullet>();
                     melee_ball mb=bul.GetComponent<melee_ball>();
-                    mb.setparent(gameObject,i);
+                    mb.setparent(gameObject,360/ti*i);
                     basb.chimg(ball_huan);
 
                 }
             }
-            if(timer%180==0){
+            if(timer%180==100){
                 basicbullet basb=GetComponent<basicbullet>();
                 basb.chv(0);
             }
-            if(timer%180==60){
+            if(timer%180==1){
                 basicbullet basb=GetComponent<basicbullet>();
                 basb.chv(4);
                 float sdeg=gdeg(gameObject,h);
@@ -91,6 +96,10 @@ public class enemy_melee : MonoBehaviour
         }
         if(cld.gameObject.name=="HeroBullet(Clone)"){
             BulletScript bscr=cld.gameObject.GetComponent<BulletScript>();
+            self.hp-=bscr.damage;
+        }
+        if(cld.gameObject.name=="NormalBullet(Clone)"){
+            NormalBullet bscr=cld.gameObject.GetComponent<NormalBullet>();
             self.hp-=bscr.damage;
         }
     }

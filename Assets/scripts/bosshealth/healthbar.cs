@@ -22,17 +22,17 @@ public class healthbar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // transform.position = new Vector3 (-741f, 465f, 30f);
-        // inilenth = 3380.19f;
-        // p = transform.position;
-        // HealthRender = GetComponent<SpriteRenderer>();
+        transform.position = new Vector3 (-741f, 465f, 30f);
+        inilenth = 3380.19f;
+        p = transform.position;
+        HealthRender = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // transform.position = sh.transform.position;
-        // // p.x = inilenth * h.hp / h.mhp;        
+        // p.x = inilenth * h.hp / h.mhp;        
         // if (p.x <= 0){
         //     if (h.phase > 3){
         //         Destroy(transform.gameObject);

@@ -13,6 +13,7 @@ public class datas : MonoBehaviour
     public float deg=0;
     public float rot=0;
     public float hp=10f;
+    public float mhp=10f;
     public float a=4;
     public float b=4;
     public float dra=0;

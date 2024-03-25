@@ -31,7 +31,7 @@ public class bullet_aya_210 : MonoBehaviour
         if(Time.time-lti>2&&bj2==0){
             bj2=1;
             basb=GetComponent<basicbullet>();
-            float ddeg=Random.Range(-5,5);
+            float ddeg=Random.Range(-1,1);
             basb.chrot(ds.rot+ddeg);
             basb.chdeg(ds.rot+ddeg);
             

@@ -14,7 +14,9 @@ public class melee_ball : MonoBehaviour
     float edeg=0;
     void Start()
     {
-        
+        basicbullet basb=GetComponent<basicbullet>();
+        basb.bound=false;
+        basb.chv(0);
     }
     public void setparent(GameObject x,float d){
         p=x;
@@ -33,13 +35,15 @@ public class melee_ball : MonoBehaviour
             if(p==null){
                 basb.chv(4);
                 basb.chdeg(edeg);
+                basb.bound=true;
                 return;
             }
             
             datas ds=p.GetComponent<datas>();
             float x=p.transform.localPosition.x,y=p.transform.localPosition.y;
-            basb.chplace(x+ds.rax*(float)Math.Cos(rdeg+ds.rbx),y+ds.rbx*(float)Math.Sin(rdeg+ds.rbx));
+            basb.chplace(x+ds.rax*(float)Math.Cos((rdeg+ds.rbx)/180f*3.14),y+ds.rax*(float)Math.Sin((rdeg+ds.rbx)/180f*3.14));
             edeg=rdeg+ds.rbx;
         }
+        
     }
 }
