@@ -10,13 +10,16 @@ public class HeartController : MonoBehaviour
     private HeartScript[] hs;
     private float BeatTime;
     private int health;
+    private int prehealth;
     static private HeroCrush h = null;
     static public void getHero(HeroCrush g){
         h = g;
     }
+    private float BasicTime;
     void Start()
     {
         health = 13;
+        prehealth = 13;
         BeatTime = -100f + Time.time;
         Hearts = new GameObject[13];
         hs = new HeartScript[13];
@@ -49,28 +52,30 @@ public class HeartController : MonoBehaviour
         hs[11] = Hearts[11].GetComponent<HeartScript>();
         Hearts[12].transform.localPosition = new Vector3 (740, 28, 0);
         hs[12] = Hearts[12].GetComponent<HeartScript>();
+        BasicTime = Time.time - 8f;
         for (int i = 0; i < hs.Length; i++){
-            hs[i].BirthTimeAdd((float)i);
+            hs[i].birthtime = BasicTime;
+            hs[i].BirthTimeAdd((float)i * 0.1f);
+            Debug.Log("changing");
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        health = h.gethealth();
-        for (int i = 0; i < health; i++){
-            hs[i].TurnAlive();
+        if (h.health > 13){
+            h.health = 13;
         }
-        for (int i = health; i < 13; i++){
-            hs[i].TurnDead();
+        if (h.gethealth() > 0){
+            health = h.gethealth();
+            for (int i = 0; i < health; i++){
+                hs[i].TurnAlive();
+                if (prehealth < h.gethealth())hs[i].ChangeAlive();
+            }
+            for (int i = health; i < 13; i++){
+                hs[i].TurnDead();
+            }
         }
-        // if (Time.time - BeatTime > 8f){
-        //     for (int i = 0; i < Hearts.Length; i++){    
-        //         Debug.Log("start leap");
-        //         StartCoroutine(hs[i].Leap());
-        //     }
-        //     BeatTime = Time.time;
-        // }
-
+        prehealth = h.gethealth();
     }
 }

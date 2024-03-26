@@ -58,7 +58,7 @@ public class enemy_drop : MonoBehaviour
                 Destroy(gameObject);
             }
             if(timer%24==0){
-                for(int i=1;i<=12;i++){
+                for(int i=1;i<=1;i++){
                     GameObject bul=Instantiate(bullet1);
                     basicbullet basb=bul.GetComponent<basicbullet>();
                     basb.chplace(transform.localPosition.x,transform.localPosition.y);

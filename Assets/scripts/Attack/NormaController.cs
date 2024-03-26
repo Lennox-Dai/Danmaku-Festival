@@ -79,6 +79,7 @@ public class NormalController : MonoBehaviour
                 ShieldScript a =  e.GetComponent<ShieldScript>();
                 a.lasting = 5f;
                 StartCoroutine(ChgSpd());
+                h.health += 6;
                 OnlyOnce = false;
             }
             if(e[0] == null && e[1] == null){

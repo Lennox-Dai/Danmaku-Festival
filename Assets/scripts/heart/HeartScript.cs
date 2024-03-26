@@ -12,7 +12,7 @@ public class HeartScript : MonoBehaviour
     private int HeartBeats;
     private SpriteRenderer HeartRender; 
     private float HeartTime;
-    private float birthtime;
+    public float birthtime;
     private bool cnt;
     void Start()
     {
@@ -22,28 +22,28 @@ public class HeartScript : MonoBehaviour
         HeartTime = -100f;
         t = true;
         cnt = false;
+        //birthtime = Time.time - 8f;
     }
 
     void Update()
     {
-        if (alive){
-            if (cnt){
-                birthtime = Time.time;
-                cnt = false;
-            }
-            if (Time.time - birthtime > 8){
-                if(Time.time - HeartTime > 1/6f){
-                    if(HeartBeats == Heart.Length - 1){
-                        HeartBeats = 0;
-                        HeartRender.sprite = Heart[HeartBeats];
-                        HeartTime = Time.time;
-                        cnt = true;
-                    }else{
-                        Debug.Log("HeartBeats" + HeartBeats);
-                        HeartRender.sprite = Heart[HeartBeats];
-                        HeartBeats = HeartBeats + 1;
-                        HeartTime = Time.time;
-                    }
+        if (cnt){
+            birthtime = Time.time;
+            cnt = false;
+        }
+        if (Time.time - birthtime > 8f){
+            if(Time.time - HeartTime > 0.1f){
+                if(HeartBeats >= Heart.Length - 2){
+                    HeartBeats = 0;
+                    if (alive)HeartRender.sprite = Heart[HeartBeats];
+                    HeartTime = Time.time;
+                    cnt = true;
+                }else{
+                    // Debug.Log("HeartBeats" + transform.gameObject + HeartBeats);
+                    SpriteRenderer sr=GetComponent<SpriteRenderer>();
+                    HeartBeats += 1;
+                    if (alive)sr.sprite = Heart[HeartBeats];
+                    HeartTime = Time.time;
                 }
             }
         }
@@ -51,6 +51,10 @@ public class HeartScript : MonoBehaviour
 
     public void TurnAlive(){
         alive = true;
+        //HeartRender.sprite = Heart[0];
+    }
+
+    public void ChangeAlive(){
         HeartRender.sprite = Heart[0];
     }
 
@@ -62,26 +66,4 @@ public class HeartScript : MonoBehaviour
         alive = false;
         HeartRender.sprite = Heart[Heart.Length - 1];
     }
-
-    // public IEnumerator Leap(){
-    //     if (!alive){
-    //         yield break;
-    //     }
-    //     t = true;
-    //     while (t){
-    //         if(Time.time - HeartTime > 1/6f){
-    //             if(HeartBeats == Heart.Length - 1){
-    //                 HeartBeats = 0;
-    //                 HeartRender.sprite = Heart[HeartBeats];
-    //                 HeartTime = Time.time;
-    //                 t = false;
-    //             }
-    //             HeartRender.sprite = Heart[HeartBeats];
-    //             HeartBeats = HeartBeats + 1;
-    //             HeartTime = Time.time;
-    //             // Debug.Log("cnt" + HeartBeats);
-    //         }
-    //     }
-    //     // yield return null;
-    // }
 }

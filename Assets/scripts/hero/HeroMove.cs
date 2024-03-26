@@ -6,7 +6,7 @@ using UnityEngine.LowLevelPhysics;
 public class HeroMove : MonoBehaviour
 {
     //人物速度
-    private const float spd = 400f;
+    private const float spd = 300f;
     public float HeroSpeed = 100.0f; 
     //控制左跑步动作的时间
     private float TimeRunLeft;
