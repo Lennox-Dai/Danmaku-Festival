@@ -9,6 +9,7 @@ public class GM : MonoBehaviour
     public HeroCrush c = null;
     public NormalController n = null;
     public SHAKE s = null;
+    public LaserController l = null;
 
 
     void Start()
@@ -33,6 +34,7 @@ public class GM : MonoBehaviour
         healthbar.getSHAKE(s);
         BackbarScript.getSHAKE(s);
         BackMenueScript.getHero(c);
+        LaserScript.getcontroller(l);
     }
 
     // Update is called once per frame

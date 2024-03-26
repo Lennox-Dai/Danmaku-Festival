@@ -397,6 +397,10 @@ PrefabInstance:
       propertyPath: r3
       value: 
       objectReference: {fileID: 1962052637}
+    - target: {fileID: 1590174655863398756, guid: 55fb164499a14e54c96b34ae95737003, type: 3}
+      propertyPath: intersect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2585179684419294269, guid: 55fb164499a14e54c96b34ae95737003, type: 3}
       propertyPath: m_Name
       value: NormalController

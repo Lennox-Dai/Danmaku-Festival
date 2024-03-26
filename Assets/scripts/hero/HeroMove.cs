@@ -6,7 +6,8 @@ using UnityEngine.LowLevelPhysics;
 public class HeroMove : MonoBehaviour
 {
     //人物速度
-    private const float spd = 200f;
+    public int mode;
+    private const float spd = 300f;
     public float HeroSpeed = 100.0f; 
     //控制左跑步动作的时间
     private float TimeRunLeft;
@@ -33,7 +34,16 @@ public class HeroMove : MonoBehaviour
 
     void Awake()
     {    
-        HeroSpeed = spd; 
+        // mode = PlayerPrefs.GetInt("Difficulty");
+        // if (mode == 1){
+        //     HeroSpeed = spd * 2;
+        // }else if(mode == 2){
+        //     HeroSpeed = spd;
+        // }else if(mode == 3){
+        //     HeroSpeed = spd / 2f;
+        // }
+
+        HeroSpeed = spd;
     //控制左跑步动作的时间
         TimeRunLeft = -1f;
     //控制右跑步动作的时间
@@ -62,12 +72,12 @@ public class HeroMove : MonoBehaviour
             bool flag = true;
             Vector3 p = transform.position;
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)){
+            if (Input.GetKeyDown(KeyCode.Space)){
                 GameObject e = Instantiate(Resources.Load("prefabs/Flame") as GameObject);
                 e.transform.localPosition = transform.localPosition;
                 HoldMode();
             }
-            if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift)){UnHoldMode();}
+            if (Input.GetKeyUp(KeyCode.Space)){UnHoldMode();}
 
             if (Input.GetKey(KeyCode.A)){
                 p.x -= HeroSpeed * Time.smoothDeltaTime;
@@ -145,7 +155,7 @@ public class HeroMove : MonoBehaviour
     }
 
     private void HoldMode(){
-        HeroSpeed = spd * 0.25f;
+        HeroSpeed = spd * 0.4f;
         Color q = GetComponent<Renderer>().material.color;
         q.a = 0.2f;
         GetComponent<Renderer>().material.color = q;

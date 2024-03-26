@@ -69,6 +69,7 @@
     <Compile Include="Assets\scripts\GameManager\GM.cs" />
     <Compile Include="Assets\scripts\Door\DoorOpen.cs" />
     <Compile Include="Assets\scripts\bossscript\phase_rest.cs" />
+    <Compile Include="Assets\scripts\Laser\LaserScript.cs" />
     <Compile Include="Assets\scripts\hint\QBehav.cs" />
     <Compile Include="Assets\scripts\reso\goldobj.cs" />
     <Compile Include="Assets\scripts\hero\HeroCrush.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\scripts\Panel\MainMenuPanel.cs" />
     <Compile Include="Assets\scripts\Attack\ControlBullet.cs" />
     <Compile Include="Assets\scripts\bossscript\stagecontroller.cs" />
+    <Compile Include="Assets\scripts\Laser\LaserController.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\datas.cs" />
     <Compile Include="Assets\scripts\Attack\ControlBomb.cs" />
     <Compile Include="Assets\scripts\Attack\BulletScript.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Assets\scripts\bosshealth\healthbar.cs" />
     <Compile Include="Assets\scripts\bossscript\aya_210.cs" />
     <Compile Include="Assets\scripts\bossscript\bullet_aya_210.cs" />
+    <Compile Include="Assets\scripts\Laser\WarningBlink.cs" />
     <Compile Include="Assets\scripts\reso\Resource1.cs" />
     <Compile Include="Assets\scripts\shield\ShieldScript.cs" />
     <Compile Include="Assets\scripts\bossscript\eightway.cs" />
@@ -113,6 +116,7 @@
     <Compile Include="Assets\scripts\hint\Blink.cs" />
     <Compile Include="Assets\scripts\Attack\NormalBullet.cs" />
     <Compile Include="Assets\scripts\hero\HeroAttack.cs" />
+    <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_dummy.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_snipe.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_snipe_big.cs" />
   </ItemGroup>

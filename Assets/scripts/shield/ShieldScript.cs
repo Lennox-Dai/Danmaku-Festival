@@ -37,28 +37,6 @@ public class ShieldScript : MonoBehaviour
         }
     }
 
-    // private IEnumerator Blink(){
-    //     Renderer renderer = GetComponent<Renderer>();
-    //     Color c = GetComponent<Renderer>().material.color;
-    //     float p = c.a;
-    //     float chg = increase_speed * Time.smoothDeltaTime;
-    //     if(increase){
-    //         p += chg;
-    //         if(p >= 0.999){
-    //             increase = false;
-    //         }
-    //     }else{
-    //         p -= chg;
-    //         if(p <= 0.001){
-    //             increase = true;
-    //         }
-    //     }
-    //     c.a =p;
-    //     renderer.material.color = c;
-        
-    //     yield return null; 
-    // }
-
     private IEnumerator Blink()
     {
         Renderer renderer = GetComponent<Renderer>();

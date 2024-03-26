@@ -32,6 +32,14 @@ public class BulletScript : MonoBehaviour
         // Debug.Log(TargetP);
         transform.position = h.transform.position;
         curPosition = transform.position;
+        // mode = PlayerPrefs.GetInt("Difficulty");
+        // if (mode == 1){
+        //     damage = 10f;
+        // }else if(mode == 2){
+        //     damage = 3f;
+        // }else if(mode == 3){
+        //     damage = 1.5f;
+        // }
         damage = 5f;
         speed = 800f;
         starttime = Time.time;

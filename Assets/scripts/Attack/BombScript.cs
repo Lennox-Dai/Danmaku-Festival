@@ -28,7 +28,18 @@ public class BombScript : MonoBehaviour
         // Debug.Log(TargetP);
         transform.position = h.transform.position;
         curPosition = transform.position;
-        damage = 500f;
+        // mode = PlayerPrefs.GetInt("Difficulty");
+        // if (mode == 1){
+        //     damage = 500f;
+        //     transform.localScale = new Vector3(500f, 500f, 1f);
+        // }else if(mode == 2){
+        //     damage = 200f;
+        //     transform.localScale = new Vector3(250f, 250f, 1f);
+        // }else if(mode == 3){
+        //     damage = 100f;
+        //     transform.localScale = new Vector3(250f, 250f, 1f);
+        // }
+        damage = 250f;
         rate = 0.05f;
         lerptime = -100f;
     }
