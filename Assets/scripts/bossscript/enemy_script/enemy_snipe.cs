@@ -23,6 +23,7 @@ public class enemy_snipe : MonoBehaviour
         arrow=Resources.Load<Sprite>("enemy/arrow_2") as Sprite;
         datas self=GetComponent<datas>();
         self.hp=2000f;
+        self.group=2;
         basicbullet bsb=GetComponent<basicbullet>();
         bsb.chplace(cx-lx+1,cy+ly/2);
         bsb.chv(3);

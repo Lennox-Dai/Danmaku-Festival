@@ -6,7 +6,7 @@ using UnityEngine.LowLevelPhysics;
 public class HeroMove : MonoBehaviour
 {
     //人物速度
-    private const float spd = 300f;
+    private const float spd = 200f;
     public float HeroSpeed = 100.0f; 
     //控制左跑步动作的时间
     private float TimeRunLeft;
@@ -44,7 +44,7 @@ public class HeroMove : MonoBehaviour
         StaticCnt = 0;
         EnterCnt = 0;
         HeroRender = GetComponent<SpriteRenderer>();
-        transform.position = new Vector3 (-226, -408, 0);
+        // transform.position = new Vector3 (-226, -408, 0);
         statusRight = true;
         StartCoroutine(EnterCoroutine()); //为了让开门动作先执行
     }
@@ -56,7 +56,8 @@ public class HeroMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        if (isEnterDone)
+        HeroCrush m = GetComponent<HeroCrush>();
+        if (isEnterDone && m.once)
         {
             bool flag = true;
             Vector3 p = transform.position;

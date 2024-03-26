@@ -21,7 +21,7 @@ public class DoorOpen : MonoBehaviour
     void Awake()
     {
         Doorcnt = 0;
-        transform.position = new Vector3 (-226, -397, 10);
+        // transform.position = new Vector3 (-226, -397, 10);
         DoorRender = GetComponent<SpriteRenderer>();
         StartCoroutine(DoChangeSprite());
     }

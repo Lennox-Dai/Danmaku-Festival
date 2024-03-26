@@ -29,7 +29,7 @@ public class BombScript : MonoBehaviour
         transform.position = h.transform.position;
         curPosition = transform.position;
         damage = 500f;
-        rate = 0.1f;
+        rate = 0.05f;
         lerptime = -100f;
     }
 
@@ -37,7 +37,7 @@ public class BombScript : MonoBehaviour
     void Update()
     {
         updateimg();
-        if ((Vector3.Distance(curPosition, TargetP) > 100) && (Time.time - lerptime > 0.01f)){
+        if ((Vector3.Distance(curPosition, TargetP) > 30) && (Time.time - lerptime > 0.01f)){
             // transform.position = Vector3.SmoothDamp(transform.position, TargetP, ref velocity, Time.smoothDeltaTime);
             curPosition = Vector3.Lerp(curPosition, TargetP, rate) + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
             lerptime = Time.time;

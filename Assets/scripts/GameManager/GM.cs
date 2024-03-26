@@ -32,6 +32,7 @@ public class GM : MonoBehaviour
         phase_shift.getSHAKE(s);
         healthbar.getSHAKE(s);
         BackbarScript.getSHAKE(s);
+        BackMenueScript.getHero(c);
     }
 
     // Update is called once per frame

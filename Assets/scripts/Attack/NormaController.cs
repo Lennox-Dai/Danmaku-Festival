@@ -130,6 +130,7 @@ public class NormalController : MonoBehaviour
         if(!choose && obtainable){
             if(objnum < 2){        
                 if (Input.GetKey(KeyCode.Q)){
+                    GetComponent<AudioSource>().Play();
                     choose = true;
                     obtains[objnum++] = hold;
                     obtainable = false;

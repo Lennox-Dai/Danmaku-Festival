@@ -84,6 +84,7 @@
     <Compile Include="Assets\scripts\Attack\BulletScript.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_melee.cs" />
     <Compile Include="Assets\scripts\heart\HeartController.cs" />
+    <Compile Include="Assets\scripts\UI\BackMenueScript.cs" />
     <Compile Include="Assets\scripts\reso\Resource3.cs" />
     <Compile Include="Assets\scripts\bosshealth\ShakePosition.cs" />
     <Compile Include="Assets\scripts\bossscript\stars.cs" />
@@ -96,6 +97,8 @@
     <Compile Include="Assets\scripts\bossscript\eightway.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\basicbullet.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\melee_ball.cs" />
+    <Compile Include="Assets\scripts\UI\OverGameScript.cs" />
+    <Compile Include="Assets\scripts\UI\GotoScript.cs" />
     <Compile Include="Assets\scripts\Audio\AudioScript.cs" />
     <Compile Include="Assets\scripts\Flame\Flame.cs" />
     <Compile Include="Assets\scripts\bosshealth\SHAKE.cs" />
