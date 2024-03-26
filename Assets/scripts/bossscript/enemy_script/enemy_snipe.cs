@@ -27,6 +27,8 @@ public class enemy_snipe : MonoBehaviour
         bsb.chplace(cx-lx+1,cy+ly/2);
         bsb.chv(3);
         h=GameObject.Find("Hero");
+        picture pic=GetComponent<picture>();
+        pic.loadimgsm("fairy_big/fbig",4,4);
     }
     float gdeg(GameObject x,GameObject y){
         float x1=x.transform.localPosition.x,y1=x.transform.localPosition.y;
@@ -38,6 +40,12 @@ public class enemy_snipe : MonoBehaviour
         return (float)Math.Atan((y2-y1)/(x2-x1))*180/3.14f+ch;
     }
     // Update is called once per frame
+    //t<t1 (cx-lx)->cx
+    //t1<t<t2 shoot2
+    //t2<t<t3 (cx,cy+ly/2)->cx-lx/2,cy-ly/2
+    //t3<t<t4 shoot2
+    //t>t4 deg=0,v=3
+    
     int ty=0;
     void Update()
     {
@@ -48,6 +56,7 @@ public class enemy_snipe : MonoBehaviour
         }
         else{
             framed=0;
+            return;
         }
         if(framed==1){
             datas self=GetComponent<datas>();
@@ -74,15 +83,16 @@ public class enemy_snipe : MonoBehaviour
                     }
                 }
             }
-            if(timer%240==0&&ty==0){
+            if(timer==240&&ty==0){
                 basicbullet bsb=GetComponent<basicbullet>();
                 bsb.chv(0);
                 shoot2=4;
                 ty=1;
             }
-            if(timer%600==0&&ty==1){
+            if(timer==600&&ty==1){
                 basicbullet bsb=GetComponent<basicbullet>();
                 bsb.chv(3);
+                bsb.chdeg(-135);
             }
             if(shoot2>0&&timer%60==0){
                 shoot2--;

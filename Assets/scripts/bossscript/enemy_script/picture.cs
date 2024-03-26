@@ -9,15 +9,18 @@ public class picture : MonoBehaviour
     Sprite[] move=new Sprite[10];
     float ltime=0;
     int cnt=0;
+    int lens,lenm;
     void Start()
     {
-        for(int i=0;i<4;i++){
+        lens=4;
+        lenm=4;
+        for(int i=0;i<lens;i++){
             stand[i]=Resources.Load<Sprite>("enemy/fairy_y/fy_"+(i+1)) as Sprite;
             if(stand[i]==null){
                 Debug.Log("kksk");
             }
         }
-        for(int i=0;i<4;i++){
+        for(int i=0;i<lenm;i++){
             move[i]=Resources.Load<Sprite>("enemy/fairy_y/fym_"+(i+1)) as Sprite;
             if(stand[i]==null){
                 Debug.Log("kksk");
@@ -31,13 +34,13 @@ public class picture : MonoBehaviour
         basicbullet basb=gameObject.GetComponent<basicbullet>();
         if(Time.time-ltime>0.2){
             ltime=Time.time;
-            cnt=(cnt+1)%4;
+            cnt++;
             float v=gameObject.GetComponent<datas>().v;
             if(v!=0){
-                basb.chimg(move[cnt]);
+                basb.chimg(move[cnt%lenm]);
                 float deg=gameObject.GetComponent<datas>().deg;
                 float muls=3;
-                if(deg<180&&deg>-180){
+                if(deg<90&&deg>-90){
                     basb.chscale(1f*muls,1f*muls);
                 }
                 else{
@@ -45,11 +48,29 @@ public class picture : MonoBehaviour
                 }
             }
             else{
-                if(basb==null){
-                Debug.Log("kksk");
-            }
-                basb.chimg(stand[cnt]);
+                basb.chimg(stand[cnt%lens]);
             }
         }
+    }
+    public void chimgs(Sprite[] s,int len1,Sprite[] m,int len2){
+        for(int i=0;i<len1;i++){
+            stand[i]=s[i];
+        }
+        lens=len1;
+        for(int i=0;i<len2;i++){
+            move[i]=m[i];
+        }
+        lenm=len2;
+    }
+    public void loadimgsm(string _name,int len1,int len2){
+        Sprite[] imgs=new Sprite[10];
+        Sprite[] imgm=new Sprite[10];
+        for(int i=0;i<len1;i++){
+            imgm[i]=Resources.Load<Sprite>("enemy/"+_name+"m_"+(i+1)) as Sprite;
+        }
+        for(int i=0;i<len2;i++){
+            imgs[i]=Resources.Load<Sprite>("enemy/"+_name+"s_"+(i+1)) as Sprite;
+        }
+        chimgs(imgs,len1,imgm,len2);
     }
 }

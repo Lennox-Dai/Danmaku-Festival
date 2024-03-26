@@ -62,9 +62,9 @@ public class aya_210 : MonoBehaviour
     */
     void Update()
     {
-        // Debug.Log(Time.time+" "+lti);
+        Debug.Log(Time.time+" "+lti);
         if(Time.time-lti>frame){
-            // Debug.Log(timer);
+            Debug.Log(timer);
             timer++;
             framed=1;
             lti=Time.time;
@@ -72,7 +72,7 @@ public class aya_210 : MonoBehaviour
         else{
             framed=0;
         }
-        // Debug.Log(Time.time+" kk "+lti);
+        Debug.Log(Time.time+" kk "+lti);
         
         if(framed==1){
             if(timer<t1){

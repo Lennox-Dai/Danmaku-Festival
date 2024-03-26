@@ -14,6 +14,7 @@ public class enemy_melee : MonoBehaviour
     GameObject bullet1=null;
     Sprite ball_huan;
     Sprite arrow;
+    
     void Start()
     {
         bullet1=Resources.Load("enemy/prefab/bullet_melee") as GameObject;
@@ -26,7 +27,12 @@ public class enemy_melee : MonoBehaviour
         h=GameObject.Find("Hero");
         basicbullet basb=GetComponent<basicbullet>();
         basb.chcolli(16,16);
+        
+        
+        picture pic=GetComponent<picture>();
+        pic.loadimgsm("fairy_b/fb",5,5);
     }
+    
     float gdeg(GameObject x,GameObject y){
         float x1=x.transform.localPosition.x,y1=x.transform.localPosition.y;
         float x2=y.transform.localPosition.x,y2=y.transform.localPosition.y;
