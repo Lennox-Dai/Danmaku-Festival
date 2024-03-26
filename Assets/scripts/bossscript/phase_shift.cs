@@ -11,6 +11,10 @@ public class phase_shift : MonoBehaviour
     float cx=-240,cy=0,lx=735,ly=540;
     public bool invulnerable=false;
     GameObject enemy_melee;
+    static private SHAKE sh = null;
+    static public void getSHAKE(SHAKE g){
+        sh = g;
+    } 
     public void rest(){
         GameObject e1=Instantiate(enemy_melee);
         basicbullet bsb=e1.GetComponent<basicbullet>();
@@ -64,23 +68,25 @@ public class phase_shift : MonoBehaviour
         Destroy(gameObject);
     }
     void OnTriggerEnter2D(Collider2D cld){
-        if(invulnerable){
-            return;
-        }
-        datas self=GetComponent<datas>();
-        // healthbar hb=cld.gameObject.GetComponent<healthbar>();
-        // hb.updatehealth(cld.gameObject.name);
-        if(cld.gameObject.name=="bomb(Clone)"){
-            BombScript bscr=cld.gameObject.GetComponent<BombScript>();
-            self.hp-=bscr.damage;
-        }
-        if(cld.gameObject.name=="HeroBullet(Clone)"){
-            BulletScript bscr=cld.gameObject.GetComponent<BulletScript>();
-            self.hp-=bscr.damage;
-        }
-        if(cld.gameObject.name=="NormalBullet(Clone)"){
-            NormalBullet bscr=cld.gameObject.GetComponent<NormalBullet>();
-            self.hp-=bscr.damage;
+        if (sh != null){
+            if(invulnerable){
+                return;
+            }
+            datas self=GetComponent<datas>();
+            healthbar hb=cld.gameObject.GetComponent<healthbar>();
+            sh.updatehealth(cld.gameObject.name);
+            if(cld.gameObject.name=="bomb(Clone)"){
+                BombScript bscr=cld.gameObject.GetComponent<BombScript>();
+                self.hp-=bscr.damage;
+            }
+            if(cld.gameObject.name=="HeroBullet(Clone)"){
+                BulletScript bscr=cld.gameObject.GetComponent<BulletScript>();
+                self.hp-=bscr.damage;
+            }
+            if(cld.gameObject.name=="NormalBullet(Clone)"){
+                NormalBullet bscr=cld.gameObject.GetComponent<NormalBullet>();
+                self.hp-=bscr.damage;
+            }
         }
     }
 }

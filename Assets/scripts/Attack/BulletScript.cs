@@ -47,7 +47,7 @@ public class BulletScript : MonoBehaviour
     {
         travel();
         if (HitWall()){
-            Debug.Log("hitwall");
+            // Debug.Log("hitwall");
             Destroy(transform.gameObject);
         }
     }

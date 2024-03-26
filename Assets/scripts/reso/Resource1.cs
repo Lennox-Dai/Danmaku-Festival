@@ -41,7 +41,7 @@ public class Resource1 : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Hero"){
-            Debug.Log("obtainable:" + h.getobtain());
+            // Debug.Log("obtainable:" + h.getobtain());
         }
     }
 

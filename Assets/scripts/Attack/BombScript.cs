@@ -29,7 +29,7 @@ public class BombScript : MonoBehaviour
         transform.position = h.transform.position;
         curPosition = transform.position;
         damage = 500f;
-        rate = 0.01f;
+        rate = 0.1f;
         lerptime = -100f;
     }
 
@@ -59,7 +59,7 @@ public class BombScript : MonoBehaviour
     }
 
     private void updateimg(){
-        if (Time.time - ImgTime > 0.8){
+        if (Time.time - ImgTime > 0.3){
             Imgcnt1 = (Imgcnt1 + 1) % FlyBomb.Length;
             BombRender.sprite = FlyBomb[Imgcnt1];
             ImgTime = Time.time;
@@ -88,7 +88,7 @@ public class BombScript : MonoBehaviour
         while(Imgcnt < LandBomb.Length) {
             BombRender.sprite = LandBomb[Imgcnt];
             Imgcnt++;
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.2f);
         }
         Destroy(transform.gameObject);
     }

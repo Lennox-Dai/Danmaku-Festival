@@ -10,14 +10,14 @@ public class BackbarScript : MonoBehaviour
     } 
     void Start()
     {
-        transform.position = new Vector3 (-741f, 465f, 35f);
+        transform.position = new Vector3 (-741f, 465f, -7f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Vector3 p = sh.transform.position;
-        // p.z += 5;
-        // transform.position = p;
+        Vector3 p = sh.transform.position;
+        p.z += 5;
+        transform.position = p;
     }
 }

@@ -40,7 +40,7 @@ public class bullet_aya_210 : MonoBehaviour
     public void init(float x,float y,float v,float d,int ty,Sprite img){
         basb=GetComponent<basicbullet>();
         ds=GetComponent<datas>();
-        Debug.Log(basb==null);
+        // Debug.Log(basb==null);
         basb.chplace(x,y);
         basb.chdeg(d);
         basb.chrot(d);

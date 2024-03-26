@@ -8,7 +8,6 @@ public class GM : MonoBehaviour
     public HeroMove h = null;
     public HeroCrush c = null;
     public NormalController n = null;
-    public datas d = null;
     public SHAKE s = null;
 
 
@@ -30,8 +29,7 @@ public class GM : MonoBehaviour
         NormalController.getmove(h);
         QBehav.getController(n);
         Blink.getController(n);
-        healthbar.getbossdata(d);
-        // SHAKE.getbossdata(d);
+        phase_shift.getSHAKE(s);
         healthbar.getSHAKE(s);
         BackbarScript.getSHAKE(s);
     }

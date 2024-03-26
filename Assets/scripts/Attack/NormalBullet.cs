@@ -32,7 +32,7 @@ public class NormalBullet : MonoBehaviour
     {
         travel();
         if (HitWall()){
-            Debug.Log("hitwall");
+            // Debug.Log("hitwall");
             Destroy(transform.gameObject);
         }
     }
@@ -57,6 +57,6 @@ public class NormalBullet : MonoBehaviour
     private void travel(){
         curPosition += Dir * speed * Time.smoothDeltaTime;
         transform.position = curPosition;
-        Debug.Log("c " + TargetP);
+        // Debug.Log("c " + TargetP);
     }
 }
