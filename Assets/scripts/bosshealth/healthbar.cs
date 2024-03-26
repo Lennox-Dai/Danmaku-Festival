@@ -45,7 +45,7 @@ public class healthbar : MonoBehaviour
             }
             HealthRender.sprite = barcolor[h.phase - 1];
             Debug.Log(p);
-            p.x = 0;
+            // p.x = 0;
             while (p.x < inilenth){
                 Debug.Log("Healing");
                 p.x += healSpeed * Time.smoothDeltaTime;

@@ -97,7 +97,7 @@ public class stagecontroller : MonoBehaviour
             if(timer==1800){
                 GameObject e1=Instantiate(enemy_snipe);
             }
-            if(timer==2400 || Input.GetKeyDown(KeyCode.O)){
+            if(timer==2400){
                 GameObject e1=Instantiate(boss1);
                 datas datas = e1.GetComponent<datas>();
                 GameObject Backbar = Instantiate(Resources.Load("prefabs/backbar") as GameObject);
