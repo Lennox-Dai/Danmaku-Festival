@@ -66,7 +66,7 @@ public class HeartController : MonoBehaviour
         if (h.health > 13){
             h.health = 13;
         }
-        if (h.gethealth() > 0){
+        if (h.gethealth() >= 0){
             health = h.gethealth();
             for (int i = 0; i < health; i++){
                 hs[i].TurnAlive();

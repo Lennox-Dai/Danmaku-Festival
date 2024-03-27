@@ -20,6 +20,6 @@ public class GotoScript : MonoBehaviour
 
     void OnClick()
     {
-        SceneManager.LoadScene("save");//level1为我们要切换到的场景
+        SceneManager.LoadScene("testfield");//level1为我们要切换到的场景
     }
 }

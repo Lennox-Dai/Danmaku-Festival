@@ -30,20 +30,21 @@ public class HeroMove : MonoBehaviour
     private int EnterCnt = 1;
     private bool isEnterDone = false;
     private bool statusRight;
+    private float nowspeed;
     private BoxCollider2D boxCollider;
 
     void Awake()
     {    
-        // mode = PlayerPrefs.GetInt("Difficulty");
-        // if (mode == 1){
-        //     HeroSpeed = spd * 2;
-        // }else if(mode == 2){
-        //     HeroSpeed = spd;
-        // }else if(mode == 3){
-        //     HeroSpeed = spd / 2f;
-        // }
-
-        HeroSpeed = spd;
+        mode = PlayerPrefs.GetInt("Difficulty");
+        if (mode == 1){
+            HeroSpeed = spd * 2;
+        }else if(mode == 2){
+            HeroSpeed = spd;
+        }else if(mode == 3){
+            HeroSpeed = spd / 2f;
+        }
+        nowspeed = HeroSpeed;
+        // HeroSpeed = spd;
     //控制左跑步动作的时间
         TimeRunLeft = -1f;
     //控制右跑步动作的时间
@@ -155,7 +156,7 @@ public class HeroMove : MonoBehaviour
     }
 
     private void HoldMode(){
-        HeroSpeed = spd * 0.4f;
+        HeroSpeed = nowspeed * 0.4f;
         Color q = GetComponent<Renderer>().material.color;
         q.a = 0.2f;
         GetComponent<Renderer>().material.color = q;
@@ -163,7 +164,7 @@ public class HeroMove : MonoBehaviour
     }
 
     private void UnHoldMode(){
-        HeroSpeed = spd;
+        HeroSpeed = nowspeed;
         Color q = GetComponent<Renderer>().material.color;
         q.a = 1f;
         GetComponent<Renderer>().material.color = q;

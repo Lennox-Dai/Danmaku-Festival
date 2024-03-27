@@ -17,5 +17,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OverScene.unity
     guid: c908a1e1da3755d41b782b76d6e332f2
+  - enabled: 1
+    path: Assets/Scenes/testfield.unity
+    guid: 5a35451f7e7282241bd20264aad5512f
+  - enabled: 1
+    path: Assets/Scenes/DIffChoose.unity
+    guid: 281f90f6a7b8e49459c439ac5ccf61cd
+  - enabled: 1
+    path: Assets/Scenes/SceneChoose.unity
+    guid: a3fcee58bf6726a4fa8cc34c51b7d8bf
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

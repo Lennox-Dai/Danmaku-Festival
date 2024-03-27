@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 public class BackMenueScript : MonoBehaviour
 {
-    static private HeroCrush h = null;
-    static public void getHero(HeroCrush g){
-        h = g;
-    } 
+    // static private HeroCrush h = null;
+    // static public void getHero(HeroCrush g){
+    //     h = g;
+    // } 
     private float time;
     void Start()
     {
         this.GetComponent<Button>().onClick.AddListener(OnClick);
-        time = h.counttime;
+        // time = h.counttime;
     }
 
     // Update is called once per frame

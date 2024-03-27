@@ -21,6 +21,7 @@ public class BulletScript : MonoBehaviour
     private float bias;//偏移量
     private float freq;//偏移频率
     private Vector3 ori;
+    private int mode;
     static public void getHero(HeroCrush g){
         h = g;
     } 
@@ -32,15 +33,15 @@ public class BulletScript : MonoBehaviour
         // Debug.Log(TargetP);
         transform.position = h.transform.position;
         curPosition = transform.position;
-        // mode = PlayerPrefs.GetInt("Difficulty");
-        // if (mode == 1){
-        //     damage = 10f;
-        // }else if(mode == 2){
-        //     damage = 3f;
-        // }else if(mode == 3){
-        //     damage = 1.5f;
-        // }
-        damage = 5f;
+        mode = PlayerPrefs.GetInt("Difficulty");
+        if (mode == 1){
+            damage = 10f;
+        }else if(mode == 2){
+            damage = 3f;
+        }else if(mode == 3){
+            damage = 1.5f;
+        }
+        // damage = 5f;
         speed = 800f;
         starttime = Time.time;
         bias = 1000f;

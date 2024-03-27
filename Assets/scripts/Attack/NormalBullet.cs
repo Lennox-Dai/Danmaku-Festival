@@ -13,6 +13,7 @@ public class NormalBullet : MonoBehaviour
     private float speed;
     private Vector3 curPosition;
     private Vector3 Dir;
+    private int mode;
     static public void getHero(HeroCrush g){
         h = g;
     } 
@@ -22,15 +23,15 @@ public class NormalBullet : MonoBehaviour
         // Debug.Log(TargetP);
         transform.position = h.transform.position;
         curPosition = transform.position;
-        // mode = PlayerPrefs.GetInt("Difficulty");
-        // if (mode == 1){
-        //     damage = 100f;
-        // }else if(mode == 2){
-        //     damage = 30f;
-        // }else if(mode == 3){
-        //     damage = 15f;
-        // }
-        damage = 50f;
+        mode = PlayerPrefs.GetInt("Difficulty");
+        if (mode == 1){
+            damage = 100f;
+        }else if(mode == 2){
+            damage = 30f;
+        }else if(mode == 3){
+            damage = 15f;
+        }
+        // damage = 50f;
         speed = 800f;
         Dir = (TargetP - curPosition).normalized;
         transform.up = new Vector3(Dir.y, -Dir.x, 0);

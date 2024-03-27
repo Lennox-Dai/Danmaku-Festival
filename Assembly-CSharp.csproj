@@ -73,12 +73,14 @@
     <Compile Include="Assets\scripts\hint\QBehav.cs" />
     <Compile Include="Assets\scripts\reso\goldobj.cs" />
     <Compile Include="Assets\scripts\hero\HeroCrush.cs" />
+    <Compile Include="Assets\scripts\UI\ChangeSceneButton.cs" />
     <Compile Include="Assets\scripts\mouse\Mouse.cs" />
     <Compile Include="Assets\scripts\bossscript\phase_shift.cs" />
     <Compile Include="Assets\scripts\bossscript\master_spark.cs" />
     <Compile Include="Assets\scripts\bossscript\wave_part.cs" />
     <Compile Include="Assets\scripts\Panel\MainMenuPanel.cs" />
     <Compile Include="Assets\scripts\Attack\ControlBullet.cs" />
+    <Compile Include="Assets\scripts\UI\startAgainScript.cs" />
     <Compile Include="Assets\scripts\bossscript\stagecontroller.cs" />
     <Compile Include="Assets\scripts\Laser\LaserController.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\datas.cs" />
@@ -88,11 +90,13 @@
     <Compile Include="Assets\scripts\heart\HeartController.cs" />
     <Compile Include="Assets\scripts\UI\BackMenueScript.cs" />
     <Compile Include="Assets\scripts\reso\Resource3.cs" />
+    <Compile Include="Assets\scripts\UI\goToLevel3Script.cs" />
     <Compile Include="Assets\scripts\bosshealth\ShakePosition.cs" />
     <Compile Include="Assets\scripts\bossscript\stars.cs" />
     <Compile Include="Assets\scripts\Attack\NormaController.cs" />
     <Compile Include="Assets\scripts\bosshealth\healthbar.cs" />
     <Compile Include="Assets\scripts\bossscript\aya_210.cs" />
+    <Compile Include="Assets\scripts\UI\goToLevel1Script.cs" />
     <Compile Include="Assets\scripts\bossscript\bullet_aya_210.cs" />
     <Compile Include="Assets\scripts\Laser\WarningBlink.cs" />
     <Compile Include="Assets\scripts\reso\Resource1.cs" />
@@ -102,15 +106,18 @@
     <Compile Include="Assets\scripts\bossscript\enemy_script\melee_ball.cs" />
     <Compile Include="Assets\scripts\UI\OverGameScript.cs" />
     <Compile Include="Assets\scripts\UI\GotoScript.cs" />
+    <Compile Include="Assets\scripts\UI\goToScene1.cs" />
     <Compile Include="Assets\scripts\Audio\AudioScript.cs" />
     <Compile Include="Assets\scripts\Flame\Flame.cs" />
     <Compile Include="Assets\scripts\bosshealth\SHAKE.cs" />
     <Compile Include="Assets\scripts\hero\HeroMove.cs" />
     <Compile Include="Assets\scripts\bossscript\utoshi_2f.cs" />
+    <Compile Include="Assets\scripts\UI\goToLevel2Script.cs" />
     <Compile Include="Assets\scripts\bosshealth\BackbarScript.cs" />
     <Compile Include="Assets\scripts\Attack\BombScript.cs" />
     <Compile Include="Assets\scripts\bossscript\aya_final.cs" />
     <Compile Include="Assets\scripts\reso\Resource2.cs" />
+    <Compile Include="Assets\scripts\UI\goToScene2.cs" />
     <Compile Include="Assets\scripts\heart\HeartScript.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_drop.cs" />
     <Compile Include="Assets\scripts\hint\Blink.cs" />
@@ -119,6 +126,7 @@
     <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_dummy.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_snipe.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_snipe_big.cs" />
+    <Compile Include="Assets\scripts\UI\goToDiffChooseScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
