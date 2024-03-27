@@ -79,9 +79,6 @@ public class enemy_snipe : MonoBehaviour
                     basb.chv(3+i*0.3f);
                     basb.chimg(arrow);
                     basb.chscale(2,2);
-                    if(ball_huan==null){
-                        Debug.Log("kkksw");
-                    }
                 }
             }
             if(timer==240&&ty==0){

@@ -183,6 +183,7 @@ MonoBehaviour:
   deg: 0
   rot: 0
   hp: 10
+  mhp: 10
   a: 4
   b: 4
   dra: 0
@@ -205,6 +206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8687c78d213c39d4296e66cee99cd2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bound: 1
+  rbound: 0
+  movesti: 0
+  moveti: 0
 --- !u!114 &4117483360666336873
 MonoBehaviour:
   m_ObjectHideFlags: 0

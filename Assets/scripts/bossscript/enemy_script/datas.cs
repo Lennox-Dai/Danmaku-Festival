@@ -45,6 +45,7 @@ public class datas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //updatepos
         Vector3 pos=transform.localPosition;
         pos.x+=(float)Math.Cos(deg*3.14/180f)*v*Time.smoothDeltaTime*60;

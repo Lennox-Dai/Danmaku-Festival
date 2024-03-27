@@ -11,7 +11,6 @@ public class aya_210 : MonoBehaviour
     float rdeg=0;
     public int timer=0;
     int framed=1;
-    bool fire=false;
     GameObject bullet1=null;
     Sprite arrow;
     Sprite grain2,grain3;
@@ -42,6 +41,9 @@ public class aya_210 : MonoBehaviour
     }
     void Start()
     {
+        if(cy==0&&cx==0){
+            //nothing
+        }
         cphase();
         ps=GetComponent<phase_shift>();
         //transform.localPosition=new Vector3(0,100,0);
@@ -49,8 +51,6 @@ public class aya_210 : MonoBehaviour
         grain2=Resources.Load<Sprite>("enemy/grain2") as Sprite;
         grain3=Resources.Load<Sprite>("enemy/grain3") as Sprite;
     }
-    bool csh=false;
-    bool st=false;
     // Update is called once per frame
     
     /*
@@ -62,9 +62,7 @@ public class aya_210 : MonoBehaviour
     */
     void Update()
     {
-        Debug.Log(Time.time+" "+lti);
         if(Time.time-lti>frame){
-            Debug.Log(timer);
             timer++;
             framed=1;
             lti=Time.time;
@@ -72,7 +70,6 @@ public class aya_210 : MonoBehaviour
         else{
             framed=0;
         }
-        Debug.Log(Time.time+" kk "+lti);
         
         if(framed==1){
             if(timer<t1){
@@ -112,18 +109,12 @@ public class aya_210 : MonoBehaviour
                     float cx=-240f,cy=0,lx=735f,ly=540f;
                     float pst=0.8f;
                     Vector2 tgt=new Vector2(UnityEngine.Random.Range(cx-lx*pst,cx+lx*pst),UnityEngine.Random.Range(cy-ly*pst,cy+ly*pst));
-                    float deg=gdeg(gameObject,tgt.x,tgt.y);
-                    float d=dis(gameObject,tgt.x,tgt.y);
-                    float v1=d/(t4-t3);
                     basicbullet basb=GetComponent<basicbullet>();
-                    basb.chdeg(deg);
-                    basb.chv(v1);
+                    basb.moveto(tgt.x,tgt.y,t4-t3);
                 }
                 
             }
             else if(timer>=t4){
-                basicbullet basb=GetComponent<basicbullet>();
-                basb.chv(0);
                 timer=0;
             }
         }

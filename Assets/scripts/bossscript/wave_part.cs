@@ -10,13 +10,14 @@ public class wave_part : MonoBehaviour
     float deg=0;
     float degv=0;
     int timer=0;
-    int framed=1;
     GameObject bullet1=null;
     bool moving=false;
     float cx=-240,cy=0,lx=735,ly=540;
     void Start()
     {
-        
+        if(ly==1&&lx==1){
+
+        }
         transform.localPosition=new Vector3(cx,cy+ly/2,0);
         bullet1=Resources.Load("enemy/prefab/bulletclass") as GameObject;
         Sprite grain=Resources.Load<Sprite>("enemy/grain1") as Sprite;
@@ -29,11 +30,9 @@ public class wave_part : MonoBehaviour
     {
         if(Time.time-lastti>frame){
             timer++;
-            framed=1;
             lastti=Time.time;
         }
         else{
-            framed=0;
             return;
         }
         if(timer<t1){

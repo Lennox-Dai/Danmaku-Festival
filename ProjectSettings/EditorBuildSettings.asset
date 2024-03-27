@@ -26,5 +26,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneChoose.unity
     guid: a3fcee58bf6726a4fa8cc34c51b7d8bf
+  - enabled: 1
+    path: Assets/Scenes/battlefield2.unity
+    guid: 9cc47def8d3df9b41bb874a5fa1341eb
+  - enabled: 1
+    path: Assets/Scenes/OverGameScene.unity
+    guid: fa18b6c4623bdf14d9a696a6172981f5
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

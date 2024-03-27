@@ -7,7 +7,7 @@ using UnityEngine;
 public class LaserScript : MonoBehaviour
 {
     static private LaserController l = null;
-    static public void getcontroller(LaserController g){
+    public void getcontroller(LaserController g){
         l = g;
     }
     private float radius;
@@ -30,7 +30,10 @@ public class LaserScript : MonoBehaviour
     void Update()
     {
         if (radius >= 1000){
-            l.isactive = false;
+            //l.isactive = false;
+            datas np=l.GetComponent<datas>();
+            np.rax=1;
+            l.framed=false;
             Destroy(transform.gameObject);
         }
         radius += movspd * Time.smoothDeltaTime;

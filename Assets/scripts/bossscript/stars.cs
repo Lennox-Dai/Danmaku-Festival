@@ -58,8 +58,6 @@ public class stars : MonoBehaviour
     t3<t<t4:snipe,rest()
     t4<t:t=0
     */
- 
-    bool ched=false;
     void Update()
     {
         if(Time.time-lastti>frame){

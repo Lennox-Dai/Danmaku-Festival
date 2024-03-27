@@ -103,19 +103,24 @@
     <Compile Include="Assets\scripts\shield\ShieldScript.cs" />
     <Compile Include="Assets\scripts\bossscript\eightway.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\basicbullet.cs" />
+    <Compile Include="Assets\scripts\bossscript\the_warden\w_phase1.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\melee_ball.cs" />
     <Compile Include="Assets\scripts\UI\OverGameScript.cs" />
     <Compile Include="Assets\scripts\UI\GotoScript.cs" />
     <Compile Include="Assets\scripts\UI\goToScene1.cs" />
     <Compile Include="Assets\scripts\Audio\AudioScript.cs" />
     <Compile Include="Assets\scripts\Flame\Flame.cs" />
+    <Compile Include="Assets\scripts\bossscript\the_warden\stagecontroller_2.cs" />
     <Compile Include="Assets\scripts\bosshealth\SHAKE.cs" />
+    <Compile Include="Assets\scripts\bossscript\the_warden\boss2_phase_shift.cs" />
     <Compile Include="Assets\scripts\hero\HeroMove.cs" />
     <Compile Include="Assets\scripts\bossscript\utoshi_2f.cs" />
     <Compile Include="Assets\scripts\UI\goToLevel2Script.cs" />
     <Compile Include="Assets\scripts\bosshealth\BackbarScript.cs" />
     <Compile Include="Assets\scripts\Attack\BombScript.cs" />
     <Compile Include="Assets\scripts\bossscript\aya_final.cs" />
+    <Compile Include="Assets\scripts\bossscript\the_warden\w_phase2.cs" />
+    <Compile Include="Assets\scripts\bossscript\the_warden\w_phase3.cs" />
     <Compile Include="Assets\scripts\reso\Resource2.cs" />
     <Compile Include="Assets\scripts\UI\goToScene2.cs" />
     <Compile Include="Assets\scripts\heart\HeartScript.cs" />
@@ -125,6 +130,7 @@
     <Compile Include="Assets\scripts\hero\HeroAttack.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_dummy.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_snipe.cs" />
+    <Compile Include="Assets\scripts\bossscript\the_warden\p3_laser.cs" />
     <Compile Include="Assets\scripts\bossscript\enemy_script\enemy_snipe_big.cs" />
     <Compile Include="Assets\scripts\UI\goToDiffChooseScript.cs" />
   </ItemGroup>

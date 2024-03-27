@@ -23,8 +23,8 @@ public class WarningBlink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!blinking)StartCoroutine(Blink());
         blinking = true;
-        StartCoroutine(Blink());
         if (Time.time >= DeadTime){
             Destroy(transform.gameObject);
         }
@@ -32,6 +32,7 @@ public class WarningBlink : MonoBehaviour
 
     private IEnumerator Blink()
     {
+        Debug.Log("shanle");
         Renderer renderer = GetComponent<Renderer>();
         Color c = renderer.material.color;
         float chg = increase_speed * Time.smoothDeltaTime;

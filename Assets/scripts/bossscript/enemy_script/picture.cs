@@ -9,9 +9,12 @@ public class picture : MonoBehaviour
     Sprite[] move=new Sprite[10];
     float ltime=0;
     int cnt=0;
-    int lens,lenm;
+    int lens=0,lenm=0;
     void Start()
     {
+        if(lens>0){
+            return;
+        }
         lens=4;
         lenm=4;
         for(int i=0;i<lens;i++){
@@ -67,6 +70,9 @@ public class picture : MonoBehaviour
         Sprite[] imgm=new Sprite[10];
         for(int i=0;i<len1;i++){
             imgm[i]=Resources.Load<Sprite>("enemy/"+_name+"m_"+(i+1)) as Sprite;
+            if(imgm[i]==null){
+                Debug.Log(_name);
+            }
         }
         for(int i=0;i<len2;i++){
             imgs[i]=Resources.Load<Sprite>("enemy/"+_name+"s_"+(i+1)) as Sprite;

@@ -34,7 +34,7 @@ public class GM : MonoBehaviour
         healthbar.getSHAKE(s);
         BackbarScript.getSHAKE(s);
         // BackMenueScript.getHero(c);
-        LaserScript.getcontroller(l);
+        //LaserScript.getcontroller(l);
     }
 
     // Update is called once per frame

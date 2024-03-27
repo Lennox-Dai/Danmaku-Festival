@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class phase_shift : MonoBehaviour
 {
@@ -46,15 +47,20 @@ public class phase_shift : MonoBehaviour
         bsb.bound=false;
         bsb.chcolli(32,32);
         phases[1].enabled=true;
+        picture pic=GetComponent<picture>();
+        pic.loadimgsm("fairy_ex/fex",6,6);
     }
     
     // Update is called once per frame
     void Update()
     {
+        basicbullet bsb=GetComponent<basicbullet>();
         datas self=GetComponent<datas>();
         self.phase=phase;
         if(self.hp<0){
             self.hp=self.mhp;
+            bsb.chv(0);
+            bsb.chdeg(0);
             phases[phase].enabled=false;
             phase++;
             if(phase>maxphase){
@@ -65,6 +71,7 @@ public class phase_shift : MonoBehaviour
         }
     }
     void dest(){
+        SceneManager.LoadScene("OverGameScene");
         Destroy(gameObject);
     }
     void OnTriggerEnter2D(Collider2D cld){
@@ -73,7 +80,6 @@ public class phase_shift : MonoBehaviour
                 return;
             }
             datas self=GetComponent<datas>();
-            healthbar hb=cld.gameObject.GetComponent<healthbar>();
             sh.updatehealth(cld.gameObject.name);
             if(cld.gameObject.name=="bomb(Clone)"){
                 BombScript bscr=cld.gameObject.GetComponent<BombScript>();
