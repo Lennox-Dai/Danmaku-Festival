@@ -81,7 +81,11 @@ public partial class basicbullet : MonoBehaviour
         Vector3 vec=new Vector3(x,y,0);
         transform.localPosition=vec;
     }
-    
+    public void chplace_z(float z){
+        Vector3 vec=transform.localPosition;
+        vec.z=z;
+        transform.localPosition=vec;
+    }
     public void chv(float x){
         datas self=GetComponent<datas>();
         self.v=x;
@@ -137,6 +141,13 @@ public partial class basicbullet : MonoBehaviour
     public float gdeg2(GameObject x,GameObject y){
         float x1=y.transform.localPosition.x,y1=y.transform.localPosition.y;
         return gdeg(x,x1,y1);
+    }
+    public float atan(float x,float y){
+        float ch=0;
+        if(x<0){
+            ch=180f;
+        }
+        return (float)Math.Atan(y/x)*180/3.14f+ch;
     }
     public float moveto(float tox,float toy,float ti){
         datas self=GetComponent<datas>();

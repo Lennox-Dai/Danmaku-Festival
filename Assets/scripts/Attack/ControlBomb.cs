@@ -22,7 +22,7 @@ public class ControlBomb : MonoBehaviour
         if (Time.time >= DeadTime){
             Destroy(transform.gameObject);
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             if (Time.time - CoolDownTime > mintime){
                 GameObject e = Instantiate(Resources.Load("prefabs/bomb") as GameObject);

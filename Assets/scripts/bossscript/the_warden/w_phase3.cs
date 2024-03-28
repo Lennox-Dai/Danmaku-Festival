@@ -28,7 +28,7 @@ public class w_phase3 : MonoBehaviour
         t1=60;
         t2=t1+30;
         t3=t2+180;
-        t4=t3+540;
+        t4=t3+480;
         t5=t4+180;
     }
 

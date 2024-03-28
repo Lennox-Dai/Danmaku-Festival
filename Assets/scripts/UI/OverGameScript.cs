@@ -19,6 +19,6 @@ public class OverGameScript : MonoBehaviour
 
     void OnClick()
     {
-        Application.Quit();
+        SceneManager.LoadScene("End");//level1为我们要切换到的场景
     }
 }

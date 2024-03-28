@@ -6,8 +6,8 @@ public class boss2_phase_shift : MonoBehaviour
 {
     // Start is called before the first frame update
     MonoBehaviour[] phases=new MonoBehaviour[10];
-    int phase=0;
-    int maxphase=4;
+    public int phase=4;
+    int maxphase=6;
     float cx=-240,cy=0,lx=735,ly=540;
     public bool invulnerable=false;
     static private SHAKE sh = null;
@@ -16,11 +16,14 @@ public class boss2_phase_shift : MonoBehaviour
     } 
     void Start()
     {
+        
         //enemy_melee=Resources.Load("enemy/prefab/enemy_melee") as GameObject;
         phases[0]=GetComponent<w_phase1>();
         phases[1]=GetComponent<w_phase2>();
         phases[2]=GetComponent<w_phase3>();
         phases[3]=GetComponent<LaserController>();
+        phases[4]=GetComponent<w_phase5>();
+        phases[5]=GetComponent<w_phase6>();
         for(int i=0;i<maxphase;i++){
             if(phases[i]!=null){
                 phases[i].enabled=false;
@@ -28,14 +31,15 @@ public class boss2_phase_shift : MonoBehaviour
         }
         datas self=GetComponent<datas>();
         self.group=3;
-        self.mhp=30000;
+        self.mhp=45000;
         self.hp=self.mhp;
         self.phase=1;
         basicbullet bsb=GetComponent<basicbullet>();
         bsb.rbound=true;
         bsb.bound=false;
         bsb.chcolli(32,32);
-        phases[0].enabled=true;
+        phase=0;
+        phases[phase].enabled=true;
         picture pic=GetComponent<picture>();
         pic.loadimgsm("fairy_ex/fex",6,6);
     }

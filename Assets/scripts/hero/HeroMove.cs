@@ -32,16 +32,18 @@ public class HeroMove : MonoBehaviour
     private bool statusRight;
     private float nowspeed;
     private BoxCollider2D boxCollider;
+    private HeroCrush a;
 
     void Awake()
     {    
+        a =  GetComponent<HeroCrush>();
         mode = PlayerPrefs.GetInt("Difficulty");
         if (mode == 1){
             HeroSpeed = spd * 2;
         }else if(mode == 2){
             HeroSpeed = spd;
         }else if(mode == 3){
-            HeroSpeed = spd / 2f;
+            HeroSpeed = spd;
         }
         nowspeed = HeroSpeed;
         // HeroSpeed = spd;
@@ -73,22 +75,22 @@ public class HeroMove : MonoBehaviour
             bool flag = true;
             Vector3 p = transform.position;
 
-            if (Input.GetKeyDown(KeyCode.Space)){
+            if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.LeftShift)||Input.GetKeyDown(KeyCode.RightShift)){
                 GameObject e = Instantiate(Resources.Load("prefabs/Flame") as GameObject);
                 e.transform.localPosition = transform.localPosition;
-                HoldMode();
+                if(!a.Hiit)HoldMode();
             }
-            if (Input.GetKeyUp(KeyCode.Space)){UnHoldMode();}
+            if (Input.GetKeyUp(KeyCode.Space)||Input.GetKeyUp(KeyCode.LeftShift)||Input.GetKeyUp(KeyCode.RightShift)){UnHoldMode();}
 
-            if (Input.GetKey(KeyCode.A)){
+            if (Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow)){
                 p.x -= HeroSpeed * Time.smoothDeltaTime;
                 if (p.x < -960){
                     p.x += HeroSpeed * Time.smoothDeltaTime * 10;
                 }
-                RUNLeft();
+                if(!a.Hiit)RUNLeft();
                 statusRight = false;
                 flag = !flag;
-            }else if (Input.GetKey(KeyCode.D)){
+            }else if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow)){
                 RUNRight();
                 statusRight = true;
                 p.x += HeroSpeed * Time.smoothDeltaTime;
@@ -97,7 +99,7 @@ public class HeroMove : MonoBehaviour
                 }
                 flag = !flag;
             }
-            if (Input.GetKey(KeyCode.S)){
+            if (Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.DownArrow)){
                 // RUNLeft();
                 // statusRight = false;
                 p.y -= HeroSpeed * Time.smoothDeltaTime;
@@ -105,7 +107,7 @@ public class HeroMove : MonoBehaviour
                     p.y += HeroSpeed * Time.smoothDeltaTime * 10;
                 }
                 flag = !flag;
-            }else if (Input.GetKey(KeyCode.W)){
+            }else if (Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.UpArrow)){
                 // RUNRight();
                 // statusRight = true;
                 p.y += HeroSpeed * Time.smoothDeltaTime;

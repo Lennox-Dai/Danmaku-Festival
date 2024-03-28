@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+// using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class NormalBullet : MonoBehaviour
@@ -27,9 +27,9 @@ public class NormalBullet : MonoBehaviour
         if (mode == 1){
             damage = 100f;
         }else if(mode == 2){
-            damage = 30f;
+            damage = 50f;
         }else if(mode == 3){
-            damage = 15f;
+            damage = 30f;
         }
         // damage = 50f;
         speed = 800f;

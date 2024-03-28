@@ -13,7 +13,7 @@ public class WarningBlink : MonoBehaviour
         DeadTime = Time.time + 5f;
         increase = false;
         blinking = false;
-        increase_speed = 0.05f;
+        increase_speed = 0.08f;
         Renderer renderer = GetComponent<Renderer>();
         Color c = renderer.material.color;
         c.a = 0.6f;
@@ -35,7 +35,7 @@ public class WarningBlink : MonoBehaviour
         Debug.Log("shanle");
         Renderer renderer = GetComponent<Renderer>();
         Color c = renderer.material.color;
-        float chg = increase_speed * Time.smoothDeltaTime;
+        float chg = increase_speed * Time.smoothDeltaTime * 100;
 
         while (Time.time < DeadTime)  // 在剩余时间内循环
         {
@@ -58,7 +58,8 @@ public class WarningBlink : MonoBehaviour
                 }
             }
             renderer.material.color = c;
-            yield return null;  // 每0.1秒闪烁一次
+            yield return new WaitForSeconds(0.01f);
+            // yield return 0.0001;  // 每0.1秒闪烁一次
         }
     }
 }

@@ -34,10 +34,10 @@ public class BombScript : MonoBehaviour
             damage = 500f;
             transform.localScale = new Vector3(500f, 500f, 1f);
         }else if(mode == 2){
-            damage = 200f;
+            damage = 300f;
             transform.localScale = new Vector3(250f, 250f, 1f);
         }else if(mode == 3){
-            damage = 100f;
+            damage = 200f;
             transform.localScale = new Vector3(250f, 250f, 1f);
         }
         // damage = 250f;

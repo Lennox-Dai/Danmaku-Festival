@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a329d2b0ca7637141ae20d1f9bb36cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 0
   HeroSpeed: 100
   LeftRun:
   - {fileID: -855298285791758126, guid: 033223f037931424faa863042d0c2ebf, type: 3}
@@ -291,6 +292,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  counttime: 0
+  dead: []
+  hitted: {fileID: 2099829752197424936, guid: 135a380469e6173458df8024d8f2ae24, type: 3}
+  nothit: {fileID: -855298285791758126, guid: 4b99475b879c5b24fb5f2daed3af8067, type: 3}
+  once: 0
+  hit: 0
 --- !u!114 &1738112339665035960
 MonoBehaviour:
   m_ObjectHideFlags: 0

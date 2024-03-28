@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+// using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
@@ -37,9 +37,9 @@ public class BulletScript : MonoBehaviour
         if (mode == 1){
             damage = 10f;
         }else if(mode == 2){
-            damage = 3f;
+            damage = 6f;
         }else if(mode == 3){
-            damage = 1.5f;
+            damage = 3f;
         }
         // damage = 5f;
         speed = 800f;

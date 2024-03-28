@@ -22,7 +22,7 @@ public class Flame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space)){
+        if (Input.GetKey(KeyCode.Space)||Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift)){
             if(Time.time -  FlashTime > 1/20f){
                 Flashcnt = (Flashcnt + 1) % Fire.Length;
                 FireRender.sprite = Fire[Flashcnt];

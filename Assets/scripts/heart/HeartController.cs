@@ -16,8 +16,10 @@ public class HeartController : MonoBehaviour
         h = g;
     }
     private float BasicTime;
+    private int mode;
     void Start()
     {
+        mode = PlayerPrefs.GetInt("Difficulty");
         health = 13;
         prehealth = 13;
         BeatTime = -100f + Time.time;
@@ -65,6 +67,9 @@ public class HeartController : MonoBehaviour
     {
         if (h.health > 13){
             h.health = 13;
+        }
+        if (h.health < 3 && mode == 1){
+            h.health = 3;
         }
         if (h.gethealth() >= 0){
             health = h.gethealth();

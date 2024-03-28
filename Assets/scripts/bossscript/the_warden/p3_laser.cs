@@ -10,8 +10,8 @@ public class p3_laser : MonoBehaviour
     float alpha=0.1f;
     GameObject hero=null;
     float cx=-240,cy=0,lx=735,ly=540;
-    float scale=4f;
-    float ms=4f;
+    float scale=2.4f;
+    float ms=2.4f;
     void Start()
     {
         hero=GameObject.Find("Hero");
@@ -59,7 +59,7 @@ public class p3_laser : MonoBehaviour
         else if(timer<t2){
             alpha=0.99f;
             float div=0.15f;
-            basb.chcolli(160,8);
+            basb.chcolli(160,6);
             if(timer%6>3){
                 basb.chscale(20,scale*(1+div));
             }
