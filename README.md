@@ -4,7 +4,7 @@
 
 > 感谢https://pixelfrog-assets.itch.io/tiny-swords  的开源素材，离开他们的慷慨分享我们无法在如此短时间内做到2D的图形化展示！
 
-![77bce91b27b847b89e85d4827923528a.png~tplv-0es2k971ck-image](.\Assets\texture\UI\77bce91b27b847b89e85d4827923528a.png~tplv-0es2k971ck-image.png)
+![77bce91b27b847b89e85d4827923528a.png~tplv-0es2k971ck-image](Assets/texture/UI/77bce91b27b847b89e85d4827923528a.png~tplv-0es2k971ck-image.png)
 
 
 
@@ -25,21 +25,21 @@
 
   1. 炫酷的子弹演出：
 
-     ![1](.\READMEimg\1.gif)
+     ![1](READMEimg/1.gif)
 
   2. 一点小小的随机性：
 
-     ![2](.\READMEimg\2.gif)
+     ![2](READMEimg/2.gif)
 
 - 策略！
 
   1. 找到最合适的道路穿梭于子弹之间：
 
-     ![3](.\READMEimg\3.png)
+     ![3](READMEimg/3.png)
 
   2. 选择合适的组合：
 
-     ![4](.\READMEimg\4.png)
+     ![4](READMEimg/4.png)
 
   3. 有时，放慢速度会是更好的选择：
 
@@ -51,39 +51,34 @@
   
   - > still
   
-    ![5](.\READMEimg\5.png)
+    ![5](READMEimg/5.png)
   
     > run
   
-    ![6](.\READMEimg\6.png)
+    ![6](READMEimg/6.png)
   
     > Door in
   
-    ![8](.\READMEimg\8.png)
+    ![8](READMEimg/8.png)
   
     > Dead
   
-    ![7](.\READMEimg\7.png)
+    ![7](READMEimg/7.png)
 
 
 
 ## 操作介绍
 
-- 人物移动
 
-  | 操作  |    功能    |
-  | :---: | :--------: |
-  |   W   |    向上    |
-  |   S   |    向下    |
-  |   A   |    向左    |
-  |   D   |    向右    |
-  |   Q   | 捡拾/交互  |
-  |  Esc  |    退出    |
-  | Shift |  低速模式  |
-  | 鼠标  | 攻击聚焦点 |
 
-- 物体交互
-
-- 攻击操作
-
+| 操作  |    功能    |
+| :---: | :--------: |
+|   W   |    向上    |
+|   S   |    向下    |
+|   A   |    向左    |
+|   D   |    向右    |
+|   Q   | 捡拾/交互  |
+|  Esc  |    退出    |
+| Shift |  低速模式  |
+| 鼠标  | 攻击聚焦点 |
 
