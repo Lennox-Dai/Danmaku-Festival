@@ -4,7 +4,7 @@
 
 > 感谢https://pixelfrog-assets.itch.io/tiny-swords  的开源素材，离开他们的慷慨分享我们无法在如此短时间内做到2D的图形化展示！
 
-(这里放主标题UI图)
+![77bce91b27b847b89e85d4827923528a.png~tplv-0es2k971ck-image](.\Assets\texture\UI\77bce91b27b847b89e85d4827923528a.png~tplv-0es2k971ck-image.png)
 
 
 
@@ -25,21 +25,21 @@
 
   1. 炫酷的子弹演出：
 
-     ![1](D:\class\unity\final\READMEimg\1.gif)
+     ![1](.\READMEimg\1.gif)
 
   2. 一点小小的随机性：
 
-     ![2](D:\class\unity\final\READMEimg\2.gif)
+     ![2](.\READMEimg\2.gif)
 
 - 策略！
 
   1. 找到最合适的道路穿梭于子弹之间：
 
-     ![3](D:\class\unity\final\READMEimg\3.png)
+     ![3](.\READMEimg\3.png)
 
   2. 选择合适的组合：
 
-     ![4](D:\class\unity\final\READMEimg\4.png)
+     ![4](.\READMEimg\4.png)
 
   3. 有时，放慢速度会是更好的选择：
 
@@ -47,25 +47,23 @@
 
 - 像素！
 
-  1. 人物：
   
-     - > still
   
-       ![5](D:\class\unity\final\READMEimg\5.png)
+  - > still
   
-       > run
+    ![5](.\READMEimg\5.png)
   
-       ![6](D:\class\unity\final\READMEimg\6.png)
+    > run
   
-       > Door in
+    ![6](.\READMEimg\6.png)
   
-       ![8](D:\class\unity\final\READMEimg\8.png)
+    > Door in
   
-       > Dead
+    ![8](.\READMEimg\8.png)
   
-       ![7](D:\class\unity\final\READMEimg\7.png)
+    > Dead
   
-  2. 交互体：
+    ![7](.\READMEimg\7.png)
 
 
 
@@ -89,7 +87,3 @@
 - 攻击操作
 
 
-
-## 我们希望
-
-> 
